@@ -1,0 +1,22 @@
+.formularios{
+    width: 100%;
+    height: auto;
+    display: flex;
+    
+    text-align: center;
+    justify-content: center;
+}
+
+.bloques-form{
+    width: 40%;
+    height: 200px;
+    padding: 2%;
+}
+
+#izquierda{
+    background-color: aquamarine;
+}
+
+#derecha{
+    background-color: bisque;
+}
