@@ -58,6 +58,22 @@ header{
     background-position: center;
 }
 
+.texto-banner{
+    color:white;
+    font-family: "Berkshire Swash", serif;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+#t1{
+    font-size: 60px;
+    height: 50px;
+}
+
+#t2{
+    margin-bottom: 4%;
+    height: 50px;
+}
 
 .form-control{
     width: 80%;
