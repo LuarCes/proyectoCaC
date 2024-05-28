@@ -1,6 +1,6 @@
 #apiHeader {
     width: 100%;
-    height: 100px;
+    height: 126px;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -36,4 +36,8 @@
     -webkit-box-shadow: 0px 0px 22px 0px rgba(240, 146, 131, 0.8);
     -moz-box-shadow: 0px 0px 22px 0px rgba(240, 146, 131, 0.8);
     box-shadow: 0px 0px 22px 0px rgba(240, 146, 131, 0.8);
+}
+
+#apiBuscar{
+    margin-top: 3%;
 }
