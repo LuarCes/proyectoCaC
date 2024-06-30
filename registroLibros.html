@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexion API</title>
-
+    <title>🌟 Iniciar Sesion - Polaris 🌟</title>
+    <link rel="stylesheet" href="style/iniciarSesion.css">
     <link rel="stylesheet" href="style/bienvenida.css">
-    <link rel="stylesheet" href="style/conexionApi.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,14 +24,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Cinzel+Decorative:wght@400;700;900&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
 </head>
-<body>
+<body id="iniciarSesion">
     
-    <header>
-        <nav class="header-nav" id="apiHeader">
+    <header class="encabezado">
+        <nav class="header-nav">
             <div class="logo-container"> 
                 <a href="index.html"><img src="imagenes/logo.png" width="45%"></a> 
             </div>
@@ -64,20 +60,33 @@
 
     </header>
 
-    <section class="buscador" id="apiBuscar">
-        <div class="buscador-texto">
-            <h1 class="texto-banner" id="text-buscador">¿Qué te gustaría leer hoy?</h1>
-        </div>
-        <input type="search" class="form-buscador" id="search-box" placeholder="Buscar libro..." required="">
-        <button id="search" class="btn btn-primary">Buscar</button>
-    </section>
+    <section class="inicioSesion">
+        <h1><b>Registrá tus Libros</b></h1>
+        <form action="" method="post" class="formulario">
+            <div>
+                <input type="text" name="titulo" placeholder="Título del libro"/>
+                <input type="text" name="autor" placeholder="Autor"/>
+                <input type="text" name="genero" placeholder="Género"/>
+                <input type="number" max="5" name="calificacion" placeholder="Calificación"/>
+                <input type="number" name="anio" placeholder="Año de publicación"/>
+                <input type="text" name="editorial" placeholder="Editorial" />
+                <select name="lenguaje" id="idioma">
+                    <option value="">--Seleccionar idioma--</option>
+                    <option value="español">Español </option>
+                    <option value="ingles">Inglés</option>
+                    <option value="aleman">Alemán</option>
+                    <option value="frances">Francés</option>
+                    <option value="italiano">Italiano</option>
+                    <option value="portugues">Portugués</option>
+                    <option value="chino">Chino</option>
+                </select>
+            </div>    
+            <input type="submit" value="Enviar" />
+        </form>
+      </section>
 
-    <!-- Contenedor para mostrar los resultados -->
-    <div class="container mt-4">
-        <div id="list-output" class="row"></div>
-    </div>
+      <script src="js/iniciarSesion.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/app.js"></script>
+
 </body>
 </html>
