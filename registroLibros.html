@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 Iniciar Sesion - Polaris 🌟</title>
+    <title>🌟 Registrá Libros - Polaris 🌟</title>
     <link rel="stylesheet" href="style/iniciarSesion.css">
     <link rel="stylesheet" href="style/bienvenida.css">
 
@@ -62,13 +62,13 @@
 
     <section class="registro-libro">
         
-        <form action="" method="post" class="formulario">
+        <form action="envioLibros.php" method="post" class="formulario">
             <h1><b>Registrá tus Libros</b></h1>
             <div>
                 <input class="completar"  type="text" name="titulo" placeholder="Título del libro"/>
                 <input class="completar" type="text" name="autor" placeholder="Autor"/>
                 <input class="completar" type="text" name="genero" placeholder="Género"/>
-                <input class="completar" type="number" max="5" name="calificacion" placeholder="Calificación"/>
+                <input class="completar" type="number" min ="1" max="5" name="calificacion" placeholder="Calificación"/>
                 <input class="completar" type="number" name="anio" placeholder="Año de publicación"/>
                 <input class="completar" type="text" name="editorial" placeholder="Editorial" />
                 <select name="lenguaje" id="idioma" class="idiomas" style="width: 50%;">
