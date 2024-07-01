@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Cinzel+Decorative:wght@400;700;900&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
 </head>
-<body id="iniciarSesion">
+<body id="registrarLibro">
     
     <header class="encabezado">
         <nav class="header-nav">
@@ -60,18 +60,19 @@
 
     </header>
 
-    <section class="inicioSesion">
-        <h1><b>Registrá tus Libros</b></h1>
+    <section class="registro-libro">
+        
         <form action="" method="post" class="formulario">
+            <h1><b>Registrá tus Libros</b></h1>
             <div>
-                <input type="text" name="titulo" placeholder="Título del libro"/>
-                <input type="text" name="autor" placeholder="Autor"/>
-                <input type="text" name="genero" placeholder="Género"/>
-                <input type="number" max="5" name="calificacion" placeholder="Calificación"/>
-                <input type="number" name="anio" placeholder="Año de publicación"/>
-                <input type="text" name="editorial" placeholder="Editorial" />
-                <select name="lenguaje" id="idioma">
-                    <option value="">--Seleccionar idioma--</option>
+                <input class="completar"  type="text" name="titulo" placeholder="Título del libro"/>
+                <input class="completar" type="text" name="autor" placeholder="Autor"/>
+                <input class="completar" type="text" name="genero" placeholder="Género"/>
+                <input class="completar" type="number" max="5" name="calificacion" placeholder="Calificación"/>
+                <input class="completar" type="number" name="anio" placeholder="Año de publicación"/>
+                <input class="completar" type="text" name="editorial" placeholder="Editorial" />
+                <select name="lenguaje" id="idioma" class="idiomas" style="width: 50%;">
+                    <option value="" disabled selected>--Seleccionar idioma--</option>
                     <option value="español">Español </option>
                     <option value="ingles">Inglés</option>
                     <option value="aleman">Alemán</option>
@@ -81,7 +82,7 @@
                     <option value="chino">Chino</option>
                 </select>
             </div>    
-            <input type="submit" value="Enviar" />
+            <input class="btn_buscar" type="submit" value="Enviar" />
         </form>
       </section>
 
