@@ -62,31 +62,52 @@
 
     <section class="registro-libro">
         
-        <form action="envioLibros.php" method="post" class="formulario">
+        <form action="envioLibros.php" method="post" class="formulario" id="form-libro">
             <h1><b>Registrá tus Libros</b></h1>
             <div>
-                <input class="completar"  type="text" name="titulo" placeholder="Título del libro"/>
-                <input class="completar" type="text" name="autor" placeholder="Autor"/>
-                <input class="completar" type="text" name="genero" placeholder="Género"/>
-                <input class="completar" type="number" min ="1" max="5" name="calificacion" placeholder="Calificación"/>
-                <input class="completar" type="number" name="anio" placeholder="Año de publicación"/>
-                <input class="completar" type="text" name="editorial" placeholder="Editorial" />
-                <select name="lenguaje" id="idioma" class="idiomas" style="width: 50%;">
-                    <option value="" disabled selected>--Seleccionar idioma--</option>
-                    <option value="español">Español </option>
-                    <option value="ingles">Inglés</option>
-                    <option value="aleman">Alemán</option>
-                    <option value="frances">Francés</option>
-                    <option value="italiano">Italiano</option>
-                    <option value="portugues">Portugués</option>
-                    <option value="chino">Chino</option>
-                </select>
+                <div>
+                    <input class="completar"  type="text" name="titulo" placeholder="Título del libro" id="titulo"/>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="completar" type="text" name="autor" placeholder="Autor" id="autor"/>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="completar" type="text" name="genero" placeholder="Género" id="genero"/>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="completar" type="number" min ="1" max="5" name="calificacion" placeholder="Calificación" id="calificacion" />
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="completar" type="number" name="anio" placeholder="Año de publicación" id="anio"/>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="completar" type="text" name="editorial" placeholder="Editorial" id="editorial"/>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <select name="lenguaje" id="idioma" class="idiomas" style="width: 50%; height: 25%;" id="idioma">
+                        <option value="" disabled selected>--Seleccionar idioma--</option>
+                        <option value="español">Español </option>
+                        <option value="ingles">Inglés</option>
+                        <option value="aleman">Alemán</option>
+                        <option value="frances">Francés</option>
+                        <option value="italiano">Italiano</option>
+                        <option value="portugues">Portugués</option>
+                        <option value="chino">Chino</option>
+                    </select>
+                    <div class="error-text"></div>
+            </div>
             </div>    
             <input class="btn_buscar" type="submit" value="Enviar" />
         </form>
       </section>
 
-      <script src="js/iniciarSesion.js"></script>
+      <script src="js/registroLibros.js"></script>
 
 
 </body>
