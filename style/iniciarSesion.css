@@ -9,8 +9,7 @@
     padding: 0;
   }
   
-
-  #registrarLibro{
+    #registrarLibro{
     background:   url("../imagenes/fondoRegistrarLibro2.jpg");
     background-size: cover; /* Para ajustar la imagen al tamaño del contenedor */
     background-position: center; /* Para centrar la imagen */
@@ -19,7 +18,7 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-  }
+    }
 
 
   .inicioSesion {
@@ -116,3 +115,7 @@
         font-size: 20px;
         margin-bottom: 2%;
     }
+
+.mostrarTabla{
+    background-color: rgba(0, 0, 0, 0.5);
+}

@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌟  Libros - Polaris 🌟</title>
-    <link rel="stylesheet" href="style/iniciarSesion.css">
-    <link rel="stylesheet" href="style/bienvenida.css">
+    <link rel="stylesheet" href="style/iniciarSesion.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/bienvenida.css?v=<?php echo time(); ?>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Cinzel+Decorative:wght@400;700;900&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 </head>
 <body id="iniciarSesion">
@@ -67,16 +68,16 @@
 <body>
     <div class="mostrarTabla">
         <table class="table">
-            <caption>Libros Registrados</caption>
+            <h1 class="text-white">Libros Registrados</h1>
             <thead>
                 <tr>
-                <th scope="col">Título</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Género</th>
-                <th scope="col">Calificación </th>
-                <th scope="col">Año </th>
-                <th scope="col">Editorial </th>
-                <th scope="col"> Idioma</th>
+                    <th class="text-white" scope="col">Título</th>
+                    <th class="text-white" scope="col">Autor</th>
+                    <th class="text-white" scope="col">Género</th>
+                    <th class="text-white" scope="col">Calificación </th>
+                    <th class="text-white" scope="col">Año </th>
+                    <th class="text-white" scope="col">Editorial </th>
+                    <th class="text-white" scope="col"> Idioma</th>
                 </tr>
             </thead>
             <tbody>
@@ -95,13 +96,13 @@
                     $idioma = $row["lenguaje"];  
 
                     echo '<tr> 
-                            <td>'.$titulo.'</td> 
-                            <td>'.$autor.'</td> 
-                            <td>'.$genero.'</td> 
-                            <td>'.$calificacion.'</td> 
-                            <td>'.$anio.'</td> 
-                            <td>'.$editorial.'</td> 
-                            <td>'.$idioma.'</td> 
+                            <td class="text-white">'.$titulo.'</td> 
+                            <td class="text-white">'.$autor.'</td> 
+                            <td class="text-white">'.$genero.'</td> 
+                            <td class="text-white">'.$calificacion.'</td> 
+                            <td class="text-white">'.$anio.'</td> 
+                            <td class="text-white">'.$editorial.'</td> 
+                            <td class="text-white">'.$idioma.'</td> 
                         </tr>';
                 }
             }
