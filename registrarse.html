@@ -61,17 +61,26 @@
     </header>
 
     <section class="inicioSesion">
-        <h1><b>Registrate</b></h1>
-        <form action="envioUsuario.php" method="post">
+        <form action="envioUsuario.php" method="post" class="formulario">
+            <h1 class="titulo-IS"><b>Registrate</b></h1>
             <div>
-                <input type="text" name="nombre" placeholder="Nombre"/>
-                <input type="text" name="apellido" placeholder="Apellido"/>
-                <input type="email" name="email" placeholder="Email"/>
-                <input type="number" name="edad" min ="18" max ="99" placeholder="Edad"/>
-                <input type="password" name="pass" placeholder="Contraseña"/>
-                <input type="password" name="pass2" placeholder="Reingrese contraseña"/>
+                <div>
+                    <input class="completar" type="text" name="nombre" placeholder="Nombre"/>
+                </div>
+                <div>
+                    <input class="completar" type="text" name="apellido" placeholder="Apellido"/>
+                </div>
+                <div>
+                    <input class="completar" type="email" name="email" placeholder="Email"/>
+                </div>
+                <div>
+                    <input class="completar" type="number" name="edad" min ="18" max ="99" placeholder="Edad"/>
+                </div>
+                <div>
+                    <input class="completar" type="password" name="pass" placeholder="Contraseña"/>
+                </div>
             </div>    
-            <input type="submit" class="boton" value="Enviar" />
+            <input class="btn_buscar" type="submit" class="boton" value="Enviar" />
         </form>
    
     </section>
