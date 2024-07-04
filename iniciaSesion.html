@@ -54,7 +54,7 @@
                 <li>Más vendidos</li>
                 <li>Nosotros</li>
                 <li><a href="conexionAPI.html">Conexion API</a></li>
-                <li><a href="registroLibros.html">Registro Libros</a></li>
+                <li><a href="registroLibros.php">Registro Libros</a></li>
             </ul>
         </nav>
 
