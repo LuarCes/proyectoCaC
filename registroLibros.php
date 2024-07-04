@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌟 Registrá Libros - Polaris 🌟</title>
-    <link rel="stylesheet" href="style/iniciarSesion.css">
-    <link rel="stylesheet" href="style/bienvenida.css">
+    <link rel="stylesheet" href="style/iniciarSesion.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/bienvenida.css?v=<?php echo time(); ?>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
 
     <section class="registro-libro">
         
-        <form action="envioLibros.php" method="post" class="formulario" id="form-libro">
+        <form action="envioLibros.php" method="post" class="formulario formulario-libro" id="form-libro">
             <h1><b>Registrá tus Libros</b></h1>
             <div>
                 <div>
@@ -102,8 +102,10 @@
                     </select>
                     <div class="error-text"></div>
             </div>
-            </div>    
-            <input class="btn_buscar" type="submit" value="Enviar" />
+            </div>
+            <div> 
+                <input class="btn_buscar_libro" type="submit" value="Enviar" />
+            </div>   
         </form>
       </section>
 
