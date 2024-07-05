@@ -66,9 +66,9 @@
         <nav class="navegador">
             <ul class="opciones">
                 <li><a href="index.html">Inicio</a></li>
-                <li>Libros</li>
+                <li><a href="index.html#novedades">Libros</a></li>
                 <li>Agendas</li>
-                <li>Más vendidos</li>
+                <li ><a href="index.html#mas-vendidos">Más vendidos</a></li>
                 <li>Nosotros</li>
                 <li><a href="conexionAPI.html">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
