@@ -29,6 +29,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Cinzel+Decorative:wght@400;700;900&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
+    <!--ALERT DE CONFIRMACION PARA ELIMINAR UN REGISTRO-->
+    <script language="JavaScript">
+        function confirmar(url){
+        if (!confirm("¿Está seguro de eliminar el registro?")) {
+            return false;
+        }else{
+            document.location= url;
+            return true;
+            }
+        }
+        </script>
+
 </head>
 <body id="iniciarSesion">
     
@@ -78,6 +90,8 @@
                     <th class="text-white" scope="col">Año </th>
                     <th class="text-white" scope="col">Editorial </th>
                     <th class="text-white" scope="col"> Idioma</th>
+                    <th class="text-white" scope="col"> </th>
+                    <th class="text-white" scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
@@ -85,8 +99,9 @@
 <?php
             $query = "select * from libro"; //query para traer todos los datos de la tabla libro
             
-            if ($result = mysqli_query($conexion,$query)) {
-                while ($row = $result->fetch_assoc()) {
+            if ($result = mysqli_query($conexion,$query)) { 
+                while ($row = $result->fetch_assoc()) { 
+                    $id = $row["id"];
                     $titulo = $row["titulo"];
                     $autor = $row["autor"];
                     $genero = $row["genero"];
@@ -103,7 +118,11 @@
                             <td class="text-white">'.$anio.'</td> 
                             <td class="text-white">'.$editorial.'</td> 
                             <td class="text-white">'.$idioma.'</td> 
-                        </tr>';
+                            <td class="text-white"><a href=modificar.php?id='.$id.'><img src="imagenes/iconoEditar.jpg" width="30px"></a></td> 
+                            ';?>
+                            <td class="text-white"><a href="javascript:;" onclick="confirmar('eliminar.php?id=<?php echo $id?>'); return false;"><img src="imagenes/iconoEliminar.png" width="30px"></a></td>
+                            </tr>
+<?php
                 }
             }
 
