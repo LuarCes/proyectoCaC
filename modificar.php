@@ -1,5 +1,6 @@
 <?php  
-    
+session_start();
+if (isset($_SESSION["id"])){
 
     if (isset($_GET['id'])){
 
@@ -8,7 +9,7 @@
         if (empty($_GET['id'])){
             echo "No existe el registro";
         }else{
-        $id = $_GET['id'];  
+             $id = $_GET['id'];  
 ?>
 
 
@@ -151,5 +152,10 @@
          <script>setTimeout(function(){ window.history.back(); }, 1000); </script>
 <?php 
     }
+
+}else{
+    header ("location:iniciaSesion.html");
+}
+
 
 ?>

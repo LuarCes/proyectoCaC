@@ -2,7 +2,7 @@
 
     if (isset($_GET["id"])){
 
-        include("conexion.php"); //conexion a la base de datos
+        require("conexion.php"); //conexion a la base de datos
         
         if (!empty($_GET["id"])){
             

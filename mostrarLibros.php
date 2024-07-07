@@ -1,5 +1,8 @@
-<?php  
-    include ("conexion.php");
+<?php  //comprobar si existe un inicio de sesion
+session_start();
+if (isset($_SESSION["id"])){
+    require("conexion.php");
+   
 ?>
 
 <!DOCTYPE html>
@@ -78,9 +81,10 @@
 
 
 <body>
+
     <div class="mostrarTabla">
         <table class="table">
-            <h1 class="text-white">Libros Registrados</h1>
+            <h1 class="text-white" style = "text-align:center">Libros Registrados</h1>
             <thead>
                 <tr>
                     <th class="text-white" scope="col">Título</th>
@@ -90,8 +94,8 @@
                     <th class="text-white" scope="col">Año </th>
                     <th class="text-white" scope="col">Editorial </th>
                     <th class="text-white" scope="col"> Idioma</th>
-                    <th class="text-white" scope="col"> </th>
-                    <th class="text-white" scope="col"> </th>
+                    <th class="text-white" scope="col"></th>
+                    <th class="text-white" scope="col"> <input class=""  style = "text-align:right" type="button" onclick="location.href = 'registroLibros.php'" value="Registrar Libro" /></th>
                 </tr>
             </thead>
             <tbody>
@@ -100,7 +104,7 @@
             $query = "select * from libro"; //query para traer todos los datos de la tabla libro
             
             if ($result = mysqli_query($conexion,$query)) { 
-                while ($row = $result->fetch_assoc()) { 
+                while ($row =mysqli_fetch_assoc($result)) { 
                     $id = $row["id"];
                     $titulo = $row["titulo"];
                     $autor = $row["autor"];
@@ -129,9 +133,17 @@
 ?>
             </tbody>
         </table>
-
+         
     </div>
+    
 
 </body>
 
 </html>
+
+
+<?php   
+}else{
+    header ("location:iniciaSesion.html");
+}
+?>

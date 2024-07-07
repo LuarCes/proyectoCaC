@@ -1,3 +1,10 @@
+<?php  //comprobar si existe un inicio de sesion
+session_start();
+if (isset($_SESSION["id"])){
+    require("conexion.php");
+   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +111,8 @@
             </div>
             </div>
             <div> 
-                <input class="btn_buscar_libro" type="submit" value="Enviar" />
+            <input class="btn_buscar_libro" type="button" onclick="history.back()" value="Regresar" />
+                <input class="btn_buscar_libro" type="submit" value="Registrar" />
             </div>   
         </form>
       </section>
@@ -114,3 +122,13 @@
 
 </body>
 </html>
+
+
+<?php 
+}else{
+    header ("location:iniciaSesion.html");
+}
+?>
+
+
+    
