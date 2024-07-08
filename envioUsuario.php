@@ -3,7 +3,7 @@
 
 //-------Validación e inserción de datos ----------------------------------->
 
-required ("conexion.php");
+require ("conexion.php");
 
 if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['edad']) && isset($_POST['pass']) && isset($_POST['pass2'])){
 
@@ -44,7 +44,6 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']
        
 
     }
-}
 
 ?>
 
