@@ -81,9 +81,7 @@ if (isset($_SESSION["id"])){
         </nav>
     </header>
 
-
-<body>
-
+    <section>
     <div class="mostrarTabla">
         <table class="table">
             <h1 class="text-white" style = "text-align:center">Libros Registrados</h1>
@@ -137,6 +135,7 @@ if (isset($_SESSION["id"])){
         </table>
          
     </div>
+    </section>
 </body>
 
 </html>
