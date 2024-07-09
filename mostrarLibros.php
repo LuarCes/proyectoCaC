@@ -69,6 +69,7 @@ if (isset($_SESSION["id"])){
         </nav>
         <nav class="navegador">
             <ul class="opciones">
+            <h5>¡Hola!, <?php echo  $_SESSION["nombre"] ?></h5>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#novedades">Libros</a></li>
                 <li>Agendas</li>
