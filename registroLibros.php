@@ -75,7 +75,7 @@ if (isset($_SESSION["id"])){
             <h1><b>Registrá tus Libros</b></h1>
             <div>
                 <div>
-                    <input class="completar"  type="text" name="titulo" placeholder="Título del libro" id="titulo"/>
+                    <input class="completar"  type="text" name="titulo" placeholder="Título del libro" id="titulo" autofocus/>
                     <div class="error-text"></div>
                 </div>
                 <div>

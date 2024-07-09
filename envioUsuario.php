@@ -1,7 +1,7 @@
 
 
 <?php
-
+session_start();
 //-------Validación e inserción de datos ----------------------------------->
 
 require ("conexion.php");
@@ -33,7 +33,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']
             $insertarUsuario =  "insert into usuario(nombre,apellido,email,edad,pass) values('$nombre','$apellido', '$email','$edad','$pass')";
             $result = mysqli_query($conexion,$insertarUsuario);
 
-            header('Location: index.php'); //redireccion a pagina Inicio
+            header('Location: iniciaSesion.html'); //redireccion a pagina Inicio
 
             exit;
 
