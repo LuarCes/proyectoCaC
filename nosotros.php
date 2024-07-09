@@ -1,11 +1,17 @@
+<?php  //comprobar si existe un inicio de sesion
+
+session_start();
+   
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 Iniciar Sesion - Polaris 🌟</title>
-    <link rel="stylesheet" href="style/iniciarSesion.css">
-    <link rel="stylesheet" href="style/bienvenida.css">
+    <title>🌟 Nosotros - Polaris 🌟</title>
+    <link rel="stylesheet" href="style/iniciarSesion.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/bienvenida.css?v=<?php echo time(); ?>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +32,11 @@
 
 </head>
 <body id="iniciarSesion">
-    
+<?php  //comprobar si existe un inicio de sesion
+
+if (empty($_SESSION["id"])){
+   
+?>   
     <header class="encabezado">
         <nav class="header-nav">
             <div class="logo-container"> 
@@ -37,55 +47,80 @@
             </div>
                
              <div class="botones-container">
-                    <ul class="header-list">
-                        <li><img src="imagenes/carrito.png" width="30px"></li>
+                <ul class="header-list">
+                <li><img src="imagenes/carrito.png" width="30px"></li>
                         <li><img src="imagenes/amor.png" width="35px"></li>
                         <li><a href="iniciaSesion.html"><img src="imagenes/perfil.png" width="30px"></a></li>
-                    </ul>
+                </ul>
             </div>
-               
-
         </nav>
+
         <nav class="navegador">
             <ul class="opciones">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#novedades">Libros</a></li>
                 <li>Agendas</li>
                 <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
-                <li><a href="nosotros.php">Nosotros</a></li>
+                <li ><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="conexionAPI.html">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
             </ul>
         </nav>
+<?php 
+    }else{
+?> 
+
+        <header class="encabezado">
+        <nav class="header-nav">
+            <div class="logo-container"> 
+                <a href="index.php"><img src="imagenes/logo.png" width="45%"></a> 
+            </div>
+            <div class="buscador-container">
+                <input type="search" class="form-control" name="s" id="" placeholder="Buscar producto..." required="">
+            </div>
+               
+             <div class="botones-container">
+                <ul class="header-list">
+                    <li><img src="imagenes/carrito.png" width="35px"></li>
+                    <li><img src="imagenes/amor.png" width="35px"></li>
+                    <li><a  href="editarUsuario.php"><img alt="" src="imagenes/editarUsuario.webp" width="34px"></a></li>
+                    <li><a  href="cerrarSesion.php"><img src="imagenes/cerrarSesion.png" width="34px"></a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <nav class="navegador">
+            <ul class="opciones">
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="index.php#novedades">Libros</a></li>
+                <li>Agendas</li>
+                <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                <li ><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="">Conexion API</a></li>
+                <li><a href="registroLibros.php">Registro Libros</a></li>
+                <li><a href="mostrarLibros.php">Ver Libros Registrados</a></li>
+            </ul>
+        </nav>
 
     </header>
+<?php  
+}
+?>
 
-    <section class="inicioSesion">
-          <form action="comprobacionSesion.php" method="post" class="formulario">
-            <h1 class="titulo-IS">Iniciar Sesión</h1>
-            
-            <div>
-                <input class="completar" type="email" placeholder="Email" id="email" name="email" autofocus>
-                <div class="error-text"></div>
-            </div>
-                
-            <div>
-                <input class="completar" type="password" placeholder="Contraseña" id="password" name="password">
-                <div class="error-text"></div>
-            </div>
+    <section class="registro-libro">
+        <p class="h1">Somos estudiantes de Codo a Codo - FullStack PHP Comisión #24144</p>    
 
-            <div>
-                <input class="btn_buscar" type="submit" value="Iniciar Sesion">
-            </div>
+        <p class="h3">Cecilia Cordeiro</p>
+        <p class="h3">Diego González</p>
+        <p class="h3">Ezequiel González</p>
+        <p class="h3">Grey Ortega</p>
 
-            <div>
-                <a id="registro-link" class="registra" href="registrarse.php">¿No tienes una cuenta? ¡ Registrate !</a>
-            </div>
-
-          </form>
-      </section>
-
-      <script src="js/iniciarSesion.js"></script>
-
+    </section>
 </body>
 </html>
+
+
+
+
+
+    

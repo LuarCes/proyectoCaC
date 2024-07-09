@@ -14,7 +14,9 @@
 
         }else{
             echo "No existe el registro";
+            header('Location: iniciaSesion.html'); //redireccion a pagina inicia sesion
         }
     }else{
         echo "No existe el id";
+        header('Location: iniciaSesion.html'); //redireccion a pagina inicia sesion
     }

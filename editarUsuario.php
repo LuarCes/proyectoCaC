@@ -2,14 +2,13 @@
 session_start();
 if (isset($_SESSION["id"])){
 
-    if (isset($_GET['id'])){
-
         include ("conexion.php"); //conexion a la base de datos
         
-        if (empty($_GET['id'])){
-            echo "No existe el registro";
+        if (empty($_SESSION['id'])){
+            echo "DEBE INICIAR SESION";
+            header ("location:iniciaSesion.html");
         }else{
-             $id = $_GET['id'];  
+            $id = $_SESSION['id']; 
 ?>
 
 
@@ -18,7 +17,7 @@ if (isset($_SESSION["id"])){
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>🌟 Modificá Libros - Polaris 🌟</title>
+        <title>🌟 Modificá Usuario - Polaris 🌟</title>
         <link rel="stylesheet" href="style/iniciarSesion.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="style/bienvenida.css?v=<?php echo time(); ?>">
 
@@ -55,7 +54,6 @@ if (isset($_SESSION["id"])){
                     <ul class="header-list">
                         <li><img src="imagenes/carrito.png" width="35px"></li>
                         <li><img src="imagenes/amor.png" width="35px"></li>
-                        <li><a  href="editarUsuario.php"><img alt="" src="imagenes/editarUsuario.webp" width="34px"></a></li>
                         <li><a  href="cerrarSesion.php"><img src="imagenes/cerrarSesion.png" width="34px"></a></li>
                     </ul>
                 </div>
@@ -80,54 +78,37 @@ if (isset($_SESSION["id"])){
         <section class="registro-libro">
             
             <?php 
-                $query="select * from libro where id='$id'";
+                $query="select * from usuario where id='$id'";
 
                 if ($result = mysqli_query($conexion,$query)){
                     $row = mysqli_fetch_array($result);          
             ?>
-                <form action="update.php" method="POST" class="formulario formulario-libro" id="form-libro">
-                    <h1><b>Modificar Libro</b></h1>
+                <form action="updateUsuario.php" method="POST" class="formulario formulario-libro" id="form-libro">
+                    <h1><b>Modificá tus Datos</b></h1>
                     <div>
                         <div>
                             <input type="hidden" name="id" value="<?php echo $row['id'];?>" />
-                            <input class="completar"  type="text" name="titulo" placeholder="Título" id="titulo" value="<?php echo $row['titulo'];?>" autofocus/>
-                            
+                            <div>
+                            <input class="completar" type="text" name="email"  id="email" placeholder="email" value="<?php echo $row['email'];?>" disabled />
+                            <div class="error-text"></div>
+                        </div>
+                            <input class="completar"  type="text" name="nombre" placeholder="Nombre" id="nombre" value="<?php echo $row['nombre'];?>" autofocus/>
                             <div class="error-text"></div>
                         </div>
                         <div>
-                            <input class="completar" type="text" name="autor" id="autor" placeholder="Autor" value="<?php echo $row['autor']?>"/>                            
+                            <input class="completar" type="text" name="apellido" id="apellido" placeholder="Apellido" value="<?php echo $row['apellido']?>"/>                            
                             <div class="error-text"></div>
                         </div>
                         <div>
-                            <input class="completar" type="text" name="genero"  id="genero" placeholder="Género" value="<?php echo $row['genero'];?>"/>
+                            <input class="completar" type="number" min ="18" max="99" name="edad" placeholder="Edad" value="<?php echo $row['edad'];?>" id="edad" />
                             <div class="error-text"></div>
                         </div>
+                        
                         <div>
-                            <input class="completar" type="number" min ="1" max="5" name="calificacion" placeholder="Calificacion" value="<?php echo $row['calificacion'];?>" id="calificacion" />
+                            <input class="completar" type="text" name="pass" placeholder="pass" value="<?php echo $row['pass'];?>" id="pass"/>
                             <div class="error-text"></div>
                         </div>
-                        <div>
-                            <input class="completar" type="number" name="anio" placeholder="Año de Publicación" value="<?php echo $row['anio'];?>" id="anio"/>
-                            <div class="error-text"></div>
-                        </div>
-                        <div>
-                            <input class="completar" type="text" name="editorial" placeholder="Editorial" value="<?php echo $row['editorial'];?>" id="editorial"/>
-                            <div class="error-text"></div>
-                        </div>
-                        <div>
-                            <select name="lenguaje" id="lenguaje" placeholder="Idioma" class="idiomas" style="width: 50%; height: 25%;" >
-                                <option value="<?php echo $row['lenguaje'];?>" selected><?php echo $row['lenguaje'];?></option>
-                                <option disabled>--Seleccione un Idioma--</option>
-                                <option value="español">Español </option>
-                                <option value="ingles">Inglés</option>
-                                <option value="aleman">Alemán</option>
-                                <option value="frances">Francés</option>
-                                <option value="italiano">Italiano</option>
-                                <option value="portugues">Portugués</option>
-                                <option value="chino">Chino</option>
-                            </select>
-                            <div class="error-text"></div>
-                    </div>
+                       
                     </div>
                     <div> 
                         <input class="btn_buscar_libro" type="button" onclick="history.back()" value="Regresar" />
@@ -150,11 +131,6 @@ if (isset($_SESSION["id"])){
 <?php 
         }
 
-    }else{
-        echo "Error, no se pudo modificar";?>
-         <script>setTimeout(function(){ window.history.back(); }, 1000); </script>
-<?php 
-    }
 
 }else{
     header ("location:iniciaSesion.html");

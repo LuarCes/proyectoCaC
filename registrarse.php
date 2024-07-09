@@ -30,7 +30,7 @@
     <header class="encabezado">
         <nav class="header-nav">
             <div class="logo-container"> 
-                <a href="index.html"><img src="imagenes/logo.png" width="45%"></a> 
+                <a href="index.php"><img src="imagenes/logo.png" width="45%"></a> 
             </div>
             <div class="buscador-container">
                 <input type="search" class="form-control" name="s" id="" placeholder="Buscar producto..." required="">
@@ -48,12 +48,12 @@
         </nav>
         <nav class="navegador">
             <ul class="opciones">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#novedades">Libros</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="index.php#novedades">Libros</a></li>
                 <li>Agendas</li>
-                <li ><a href="index.html#mas-vendidos">Más vendidos</a></li>
-                <li>Nosotros</li>
-                <li><a href="conexionAPI.html">Conexion API</a></li>
+                <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
             </ul>
         </nav>
@@ -65,7 +65,7 @@
             <h1 class="titulo-IS"><b>Registrate</b></h1>
             <div>
                 <div>
-                    <input class="completar" type="text" name="nombre" placeholder="Nombre"/>
+                    <input class="completar" type="text" name="nombre" placeholder="Nombre" autofocus/>
                 </div>
                 <div>
                     <input class="completar" type="text" name="apellido" placeholder="Apellido"/>
@@ -79,8 +79,12 @@
                 <div>
                     <input class="completar" type="password" name="pass" placeholder="Contraseña"/>
                 </div>
+                <div>
+                    <input class="completar" type="password" name="pass2" placeholder="Vuelve a Ingresar su Contraseña"/>
+                </div>
             </div>    
-            <input class="btn_buscar" type="submit" class="boton" value="Enviar" />
+            <input class="btn_buscar_libro" type="button" onclick="history.back()" value="Regresar" />
+            <input class="btn_buscar" type="submit" class="boton" value="Registrar" />
         </form>
    
     </section>

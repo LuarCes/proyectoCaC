@@ -48,32 +48,33 @@ if (isset($_SESSION["id"])){
 <body id="iniciarSesion">
     
     <header class="encabezado">
-        <nav class="header-nav">
+    <nav class="header-nav">
             <div class="logo-container"> 
-                <a href="index.html"><img src="imagenes/logo.png" width="45%"></a> 
+                <a href="index.php"><img src="imagenes/logo.png" width="45%"></a> 
             </div>
             <div class="buscador-container">
                 <input type="search" class="form-control" name="s" id="" placeholder="Buscar producto..." required="">
             </div>
                
              <div class="botones-container">
-                    <ul class="header-list">
-                        <li><img src="imagenes/carrito.png" width="30px"></li>
-                        <li><img src="imagenes/amor.png" width="35px"></li>
-                        <li><a href="iniciaSesion.html"><img src="imagenes/perfil.png" width="30px"></a></li>
-                    </ul>
+                <ul class="header-list">
+                    <li><img src="imagenes/carrito.png" width="35px"></li>
+                    <li><img src="imagenes/amor.png" width="35px"></li>
+                    <li><a  href="editarUsuario.php"><img alt="" src="imagenes/editarUsuario.webp" width="34px"></a></li>
+                    <li><a  href="cerrarSesion.php"><img src="imagenes/cerrarSesion.png" width="34px"></a></li>
+                </ul>
             </div>
                
 
         </nav>
         <nav class="navegador">
             <ul class="opciones">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#novedades">Libros</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="index.php#novedades">Libros</a></li>
                 <li>Agendas</li>
-                <li ><a href="index.html#mas-vendidos">Más vendidos</a></li>
-                <li>Nosotros</li>
-                <li><a href="conexionAPI.html">Conexion API</a></li>
+                <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
             </ul>
         </nav>
@@ -95,7 +96,7 @@ if (isset($_SESSION["id"])){
                     <th class="text-white" scope="col">Editorial </th>
                     <th class="text-white" scope="col"> Idioma</th>
                     <th class="text-white" scope="col"></th>
-                    <th class="text-white" scope="col"> <input class=""  style = "text-align:right" type="button" onclick="location.href = 'registroLibros.php'" value="Registrar Libro" /></th>
+                    <th class="text-white" scope="col"> <button type="button" class="btn btn-light" onclick="location.href = 'registroLibros.php'" value="">Registrar Libro</button></th>
                 </tr>
             </thead>
             <tbody>
@@ -135,8 +136,6 @@ if (isset($_SESSION["id"])){
         </table>
          
     </div>
-    
-
 </body>
 
 </html>

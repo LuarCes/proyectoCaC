@@ -1,9 +1,10 @@
 
+
 <?php
 
 //-------Validación e inserción de datos ----------------------------------->
 
-required ("conexion.php");
+require ("conexion.php");
 
 if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['edad']) && isset($_POST['pass']) && isset($_POST['pass2'])){
 
@@ -32,7 +33,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']
             $insertarUsuario =  "insert into usuario(nombre,apellido,email,edad,pass) values('$nombre','$apellido', '$email','$edad','$pass')";
             $result = mysqli_query($conexion,$insertarUsuario);
 
-            header('Location: index.html'); //redireccion a pagina Inicio
+            header('Location: index.php'); //redireccion a pagina Inicio
 
             exit;
 
@@ -44,9 +45,9 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']
        
 
     }
-}
 
 ?>
+
 
 
 
