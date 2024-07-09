@@ -78,6 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
         input.focus();
     };
 
+    
+    const validatePasswordMatch = () => {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const errorMessage = document.getElementById('error-message2');
+
+        if (password !== confirmPassword) {
+            errorMessage.textContent = "Las contraseñas no coinciden";
+            return false;
+        } else {
+            errorMessage.textContent = "";
+            return true;
+        }
+    };
+
+
+
     // Función para eliminar un mensaje de error de un campo
     const setSuccessFor = (input) => {
         // Encuentra el elemento padre del campo de entrada
@@ -117,4 +134,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+});
+
+document.getElementById('registroForm').addEventListener('submit', function(event) {
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var errorMessage = document.getElementById('error-message2');
+
+    if (password !== confirmPassword) {
+        errorMessage.textContent = "Las contraseñas no coinciden";
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else {
+        errorMessage.textContent = ""; // Limpiar el mensaje de error si coinciden
+    }
 });

@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Cinzel+Decorative:wght@400;700;900&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
+
 </head>
 <body id="iniciarSesion">
     
@@ -50,8 +51,7 @@
             <ul class="opciones">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#novedades">Libros</a></li>
-                <li>Agendas</li>
-                <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                <li><a href="index.php#mas-vendidos">Más vendidos</a></li>
                 <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
@@ -61,6 +61,7 @@
     </header>
 
     <section class="inicioSesion">
+
         <form action="envioUsuario.php" method="post" class="formulario">
             <h1 class="titulo-IS"><b>Registrate</b></h1>
             <div>
@@ -74,15 +75,16 @@
                     <input class="completar" type="email" name="email" placeholder="Email"/>
                 </div>
                 <div>
-                    <input class="completar" type="number" name="edad" min ="18" max ="99" placeholder="Edad"/>
+                    <input class="completar" type="number" name="edad" min="18" max="99" placeholder="Edad"/>
                 </div>
                 <div>
-                    <input class="completar" type="password" name="pass" placeholder="Contraseña"/>
+                    <input class="completar" type="password" id="password" name="pass" placeholder="Contraseña" required/>
                 </div>
                 <div>
-                    <input class="completar" type="password" name="pass2" placeholder="Vuelve a Ingresar su Contraseña"/>
+                    <input class="completar" type="password" id="confirmPassword" name="pass2" placeholder="Vuelve a Ingresar su Contraseña" required/>
                 </div>
-            </div>    
+                <span id="error-message2" class="error"></span>
+            </div>
             <input class="btn_buscar_libro" type="button" onclick="history.back()" value="Regresar" />
             <input class="btn_buscar" type="submit" class="boton" value="Registrar" />
         </form>
@@ -91,6 +93,6 @@
 
     <script src="js/iniciarSesion.js"></script>
 
-
+    
 </body>
 </html>

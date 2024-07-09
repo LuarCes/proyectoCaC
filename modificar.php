@@ -66,8 +66,7 @@ if (isset($_SESSION["id"])){
                 <ul class="opciones">
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="index.php#novedades">Libros</a></li>
-                    <li>Agendas</li>
-                    <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                    <li><a href="index.php#mas-vendidos">Más vendidos</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="">Conexion API</a></li>
                     <li><a href="registroLibros.php">Registro Libros</a></li>

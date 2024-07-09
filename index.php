@@ -61,9 +61,8 @@ if (empty($_SESSION["id"])){
             <ul class="opciones">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#novedades">Libros</a></li>
-                <li>Agendas</li>
-                <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
-                <li ><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="conexionAPI.html">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
             </ul>
@@ -95,9 +94,8 @@ if (empty($_SESSION["id"])){
             <ul class="opciones">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#novedades">Libros</a></li>
-                <li>Agendas</li>
-                <li ><a href="index.php#mas-vendidos">Más vendidos</a></li>
-                <li ><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="index.php#mas-vendidos">Más vendidos</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="">Conexion API</a></li>
                 <li><a href="registroLibros.php">Registro Libros</a></li>
                 <li><a href="mostrarLibros.php">Ver Libros Registrados</a></li>
@@ -406,7 +404,7 @@ if (empty($_SESSION["id"])){
       
         <!-- Copyright -->
         <div class="inferior">
-          <p>© 2024 All Rights Reserved || Design by Cecilia Cordeiro - Diego González - Ezequiel González - Grey Ortega </p>
+          <p>© 2024 All Rights Reserved || Design by <a href="https://github.com/LuarCes">Cecilia Cordeiro</a> - <a href="https://github.com/diegogg89">Diego González</a> - <a href="https://github.com/EzequielDeiana">Ezequiel González</a> - <a href="https://github.com/grey-16">Grey Ortega</a> </p>
           
         </div>
         <!-- Copyright -->
