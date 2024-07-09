@@ -47,7 +47,7 @@ if (isset($_SESSION["id"])){
 </head>
 <body id="iniciarSesion">
     
-    <header class="encabezado">
+    <header class="encabezado-mostrarLibros">
     <nav class="header-nav">
             <div class="logo-container"> 
                 <a href="index.php"><img src="imagenes/logo.png" width="45%"></a> 
