@@ -7,9 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
        
         if (!validateForm()) {
             // mensaje en consola indica que el formulario no es válido
-            console.log('El formulario no es válido. Por favor, corrige los errores.');
+            console.log('El formulario no es válido. Por favor, corrige los errores.')
+
             // Evita que el formulario se envíe
             event.preventDefault();
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Complete todos los campos",
+              });
         } else {
             console.log('El formulario es válido. Enviar datos...');
         }
@@ -19,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let isValid = true;
         isValid = validateEmailField('email', 'El correo electrónico no es válido') && isValid;
         isValid = validateField('password', 'La contraseña es obligatoria') && isValid;
+        isValid = validateField('confirmPassword', 'La contraseña es obligatoria') && isValid;
+        isValid = validateField('nombre', 'El nombre es obligatorio') && isValid;
+        isValid = validateField('apellido', 'El apellido es obligatorio') && isValid;
+        isValid = validateField('edad', 'La edad es obligatoria') && isValid;
         return isValid;
     };
 
@@ -69,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para establecer un mensaje de error en un campo
     const setErrorFor = (input, message) => {
         const formControl = input.closest('div');
-        const errorText = formControl.querySelector('.error-text');
+        const errorText = formControl.querySelector('.completar');
         // Agrega clase error
         formControl.classList.add('error');
         // Establece el texto del mensaje de error
@@ -102,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Elimina la clase de error 
         formControl.classList.remove('error');
         // Encuentra el elemento de texto de error 
-        const errorText = formControl.querySelector('.error-text');
+        const errorText = formControl.querySelector('.completar');
         // Establece el texto de error como vacío
         errorText.innerText = '';
     };
@@ -136,3 +146,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.getElementById('form').addEventListener('submit', function(event) {
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var errorMessage = document.getElementById('error-message2');
+
+    if (password !== confirmPassword) {
+        errorMessage.textContent = "Las contraseñas no coinciden";
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else {
+        errorMessage.textContent = ""; // Limpiar el mensaje de error si coinciden
+    }
+});
+
+document.getElementById('form').addEventListener('submit', function(event) {
+    var nombre = document.getElementById('nombre').value;
+    var apellido = document.getElementById('apellido').value;
+    var edad = document.getElementById('edad').value;
+    var correo = document.getElementById('email').value;
+    var errorMessage = document.getElementById('error-message2');
+
+
+    if(nombre == "" || apellido == "" || edad == "" || correo == "" ) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Complete todos los campos",
+          });
+
+        event.preventDefault()
+    }else{
+        errorMessage.textContent = ""
+    }
+
+})
