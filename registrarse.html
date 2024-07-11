@@ -64,27 +64,33 @@
 
         <form action="envioUsuario.php" method="post" class="formulario">
             <h1 class="titulo-IS"><b>Registrate</b></h1>
-            <div>
+            
                 <div>
                     <input class="completar" type="text" id="nombre" name="nombre" placeholder="Nombre" autofocus/>
+                    <div class="error-text"></div>
                 </div>
                 <div>
                     <input class="completar" type="text" id="apellido" name="apellido" placeholder="Apellido"/>
+                    <div class="error-text"></div>
                 </div>
                 <div>
-                    <input class="completar" type="email" id="email" name="email" placeholder="Email"/>
+                    <input class="completar" type="email" id="email" name="email" placeholder="Email"/>  
+                    <div class="error-text"></div>
                 </div>
                 <div>
                     <input class="completar" type="number" id="edad" name="edad" min="18" max="99" placeholder="Edad"/>
+                    <div class="error-text"></div>
                 </div>
                 <div>
-                    <input class="completar" type="password" id="password" name="pass" placeholder="Contraseña" required/>
+                    <input class="completar" type="password" id="password" name="pass" placeholder="Contraseña" />
+                    <div class="error-text"></div>
                 </div>
                 <div>
-                    <input class="completar" type="password" id="confirmPassword" name="pass2" placeholder="Vuelve a Ingresar su Contraseña" required/>
+                    <input class="completar" type="password" id="confirmPassword" name="pass2" placeholder="Vuelve a Ingresar su Contraseña" />
+                    <div class="error-text"></div>
                 </div>
                 <span id="error-message2" class="error"></span>
-            </div>
+            
             <input class="btn_buscar_libro" type="button" onclick="history.back()" value="Regresar" />
             <input class="btn_buscar" type="submit" class="boton" value="Registrar" />
         </form>
