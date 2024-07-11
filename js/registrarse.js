@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = validateEmailField('email', 'El correo electrónico no es válido') && isValid;
         isValid = validateField('password', 'La contraseña es obligatoria') && isValid;
         isValid = validateField('confirmPassword', 'La contraseña es obligatoria') && isValid;
-        isValid = validateField('nombre', 'El nombre es obligatorio') && isValid;
         isValid = validateField('apellido', 'El apellido es obligatorio') && isValid;
         isValid = validateField('edad', 'La edad es obligatoria') && isValid;
+        isValid = validateField('nombre', 'El nombre es obligatorio') && isValid;
         return isValid;
     };
 
